@@ -2,11 +2,13 @@ import {
   Server,
   sendUnaryData,
   ServerUnaryCall,
+  ServerCredentials,
 } from "@grpc/grpc-js";
 import {
   LoginCode,
   LoginResult,
   LoginRequest,
+  AuthServiceService,
 } from "../../protos/auth";
 
 const users = [
@@ -41,3 +43,10 @@ const login = (
     callback(null, result);
   }
 };
+
+const server = new Server();
+server.addService(AuthServiceService, { login });
+server.bindAsync("localhost:8080", ServerCredentials.createInsecure(), () => {
+  console.log("Server running at http://localhost:8080");
+  server.start();
+});
