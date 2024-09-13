@@ -1,7 +1,7 @@
 {
   "name": "node-grpc-auth",
   "description": "A simple Node application with gRPC communication.",
-  "main": "dist/index.js",
+  "main": "dist/server/server.js",
   "repository": "git@github.com:pchchv/node-grpc-auth.git",
   "author": "Evgenii Pochechuev <ipchchv@gmail.com>",
   "license": "Apache-2.0",
