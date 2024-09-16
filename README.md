@@ -1,5 +1,7 @@
 # node-grpc-auth
-A simple Node application with gRPC communication.
+
+*Simple application with gRPC communications.*   
+The gRPC client and server communicate over the network using the gRPC protocol, which is based on HTTP/2. The client makes a remote procedure call (RPC) to the server by calling a method in a stub on the client side. This method corresponds to the method defined in the server service definition (auth.proto file). The client and server use protocol buffers (protobuf) to serialize and deserialize the input and output data of the method.
 
 ## Running server
 ```sh
