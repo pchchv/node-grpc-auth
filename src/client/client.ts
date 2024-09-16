@@ -1,4 +1,8 @@
-import { AuthServiceClient, LoginRequest, LoginResult } from "../../protos/auth";
+import {
+  AuthServiceClient,
+  LoginRequest,
+  LoginResult,
+} from "../../protos/auth";
 import { ServiceError, credentials } from "@grpc/grpc-js";
 
 const loginRequest: LoginRequest = {
@@ -8,12 +12,12 @@ const loginRequest: LoginRequest = {
 
 const client = new AuthServiceClient(
   "localhost:8080",
-  credentials.createInsecure()
+  credentials.createInsecure(),
 );
 
 client.login(
   loginRequest,
   (err: ServiceError | null, response: LoginResult) => {
     console.log(JSON.stringify(response));
-  }
+  },
 );
